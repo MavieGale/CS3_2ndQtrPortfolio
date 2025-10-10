@@ -17,13 +17,32 @@
 
         <style>
             body {
-                background-image: linear-gradient(to bottom, #e1e6f4 , #819dcc); 
+                background-image: linear-gradient(to bottom, #c3d3ff ,#6d8ada ); 
                 min-height: 100vh; 
                 margin: 0; 
                 font-family:'Montserrat', sans-serif;
                 img {
                 border-radius: 50%;
                 }
+            }
+            body {
+                background-image: linear-gradient(to bottom, #c3d3ff , #6d8ada ); 
+                min-height: 100vh; 
+                margin: 0; 
+                font-family: 'Montserrat', sans-serif;
+
+                opacity: 0;
+                animation: fadeIn 1.0s ease-in forwards;
+            }
+
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+
+            tr:hover {
+                background-color: #c3d3ff;
+                transition: background-color 0.2s ease;
             }
         </style>
     </head>

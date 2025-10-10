@@ -20,10 +20,31 @@
             margin: 0; 
             font-family:'Montserrat', sans-serif;
         }
+
         tr:hover {
             background-color: #e879a2 ;
             transition:background-color 0.3s ease;
             }
+
+        body {
+            background-image: linear-gradient(to bottom, #ffd7d7 , #f395b7); 
+            min-height: 100vh; 
+            margin: 0; 
+            font-family: 'Montserrat', sans-serif;
+
+            opacity: 0;
+            animation: fadeIn 1.0s ease-in forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        tr:hover {
+            background-color: #e879a2;
+            transition: background-color 0.2s ease;
+        }
         </style>
 
     </head>
@@ -36,6 +57,7 @@
         </header>
 
         <nav>
+
         <table style="border:1px solid black; border-spacing:10px; border-collapse: separate;">
             <tr>
                 <th style="border:1px solid black; padding:10px;">Image</th>
@@ -115,9 +137,9 @@
             <h2> Other links!</h2>
                 <nav>
                     <a href="../index.html"> Home <br> </a>
-                    <a href="https://www.w3schools.com/">Visit the History of Ice cream<br></a>
+                    <a href="https://lalicanpshs.github.io/CS3_2NDQTRPORTFOLIO/public/2Q2GBerylliumLalican.html">Visit the History of Ice cream<br></a>
                     <a href="https://www.w3schools.com/">See the Unique types of ice cream made by different countries<br></a>
-                    <a href="https://www.w3schools.com/">Learn how to do your own Ice cream using different methods!</a>
+                    <a href="https://leigh528.github.io/CS3_2NDQTRPORTFOLIO/">Learn how to do your own Ice cream using different methods!</a>
                 </nav>
             <h2>References</h2>
                 <p>Explorer, S. (2024, December 5). The top 10 most popular types of ice cream - swiggy diaries. Swiggy Diaries. https://blog.swiggy.com/food/ten-types-of-icecreams/</p>
