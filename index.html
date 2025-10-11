@@ -1,48 +1,88 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="2Q Portfolio">
-        <meta name="keywords" content ="2Q, Portfolio, Projects, Wed Development">
+        <meta name="keywords" content="2Q, Portfolio, Projects, Web Development">
         <meta name="author" content="Mavie Gale Cruz">
         <title>2nd Qtr Portfolio</title>
         <link rel="stylesheet" href="stylesheet.css">
-        <link rel="icon" href="./asset/Icecream.jpg" sizes="100x100" type="image/jpg">
+        <link rel="icon" href="./asset/Venti.jpg" sizes="100x100" type="image/jpg">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <link rel="icon" href="./asset/Venti.jpg" sizes="100x100" type="image/jpg">
-        <script scr ="script.js" defer></script>
+        <script src="script.js" defer></script>
 
         <style>
             body {
-                background-image: linear-gradient(to bottom, #c3d3ff ,#6d8ada ); 
-                min-height: 100vh; 
-                margin: 0; 
-                font-family:'Montserrat', sans-serif;
-                img {
-                border-radius: 50%;
-                }
-            }
-            body {
-                background-image: linear-gradient(to bottom, #c3d3ff , #6d8ada ); 
-                min-height: 100vh; 
-                margin: 0; 
+                background-image: linear-gradient(to bottom, #c3d3ff , #6d8ada);
+                min-height: 100vh;
+                margin: 0;
                 font-family: 'Montserrat', sans-serif;
-
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 80px; 
                 opacity: 0;
                 animation: fadeIn 1.0s ease-in forwards;
             }
+
 
             @keyframes fadeIn {
                 from { opacity: 0; }
                 to { opacity: 1; }
             }
 
-            tr:hover {
+            h1 {
+                font-weight: 700;
+                margin-bottom: 30px;
+                text-align: center;
+            }
+
+            .card {
+                background-color: white;
+                border-radius: 20px;
+                box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+                display: flex;
+                align-items: center;
+                padding: 25px 40px;
+                width: 420px;
+                gap: 25px;
+            }
+
+            .card img {
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+
+            .info p {
+                margin: 5px 0;
+                font-size: 16px;
+            }
+
+            .info b {
+                font-weight: 600;
+            }
+
+            nav a {
+                display: inline-block;
+                margin-top: 25px;
+                background-color: #fff;
+                color: #333;
+                padding: 10px 20px;
+                border-radius: 10px;
+                text-decoration: none;
+                font-weight: 600;
+                transition: all 0.3s ease;
+            }
+
+            nav a:hover {
                 background-color: #c3d3ff;
-                transition: background-color 0.2s ease;
+                transform: scale(1.05);
             }
         </style>
     </head>
@@ -50,24 +90,22 @@
     <body>
         <header>
             <center>
-            <h1>Haiyo! Welcome to my 2nd Qtr Portfolio!</h1>
-            <img src="./asset/barbatos.jpg" alt="Avatar" style="width:300px;float:left">
-            
-            <section>
-                <center>
-                    <p><br><b>Name:</b> Mavie Gale G. Cruz<br> <b>Section:</b> Beryllium, Be09<br></p>
-                </center>
-            </section>
-                
-        </center>
+                <h1>Haiyo! Welcome to my 2nd Qtr Portfolio!</h1>
+
+                <div class="card">
+                    <img src="./asset/barbatos.jpg" alt="Avatar">
+                    <div class="info">
+                        <p><b>Name:</b> Mavie Gale G. Cruz</p>
+                        <p><b>Section:</b> Beryllium</p>
+                        <p><b>CN:</b> Be09</p>
+                    </div>
+                </div>
+            </center>
         </header>
 
         <nav>
-            <center>
-                <a href="./public/2Q1GSBerylliumCruz.html"><br>1st Graded Exercise</a>
-            </center>
+            <a href="./public/2Q1GSBerylliumCruz.html">1st Graded Exercise</a>
         </nav>
-
-
+        
     </body>
 </html>
