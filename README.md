@@ -36,7 +36,7 @@
 
 ### Extra notes:
 #### JS incorporation:
-The main logic of our webpage will center around being able to search the character's names through an ID, and using a filter mechanic. This filter mechanic involves sorting the characters by the seven elements according to their vision (Anemo, Geo, Pyro, Cryo, Hydro, Electro, Dendro) and their weapon types (Polearm, Sword, Claymore, Catalyst, Bow).  This will manifest in clicking the icon on the left size of the explore page. The user will be able to toggle the filters as well. A maximum of three filters can be achieved (nation, weapon type, and element).
+The main logic of our webpage will center around being able to search the character's names through an ID, and using a filter mechanic. This filter mechanic involves sorting the characters by the seven elements according to their vision (Anemo, Geo, Pyro, Cryo, Hydro, Electro, Dendro) and their weapon types (Polearm, Sword, Claymore, Catalyst, Bow).  This will manifest in clicking the icon on the left side of the webpages featuring the nation and its characters. The characters without the desired ID type will be filtered out, and be hidden from display until the user toggles it on. The user will be able to toggle the filters as well. A maximum of three filters can be achieved (nation, weapon type, and element).
 
 ### Wireframe:
 **Note: Please also access this canva link as it has animations as well: https://www.canva.com/design/DAG1ia7H2IY/XbeEpsVcLVqurXoz6OmDsA/edit?utm_content=DAG1ia7H2IY&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton**
