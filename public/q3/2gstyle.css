@@ -1,0 +1,58 @@
+  * {
+    font-family: "Karla", sans-serif;
+    box-sizing: border-box;
+  }
+
+
+body {
+  background-color: white;
+  font-family: Arial, sans-serif;
+  color: black;
+}
+
+header {
+  border-top: 6px solid #8bbcff;
+  background-color: #eaf4ff;
+}
+
+/* Navbar */
+.navbar {
+  height: 45px;
+  display: flex;
+  align-items: center;   /* vertically centers Home */
+  padding-left: 20px;
+}
+
+/* Home link */
+.navbar a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+
+form {
+  width: 80%;
+  margin: auto;
+}
+
+input, select, textarea {
+  border: 1px solid black;
+  padding: 8px;
+  margin-top: 5px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  background-color: #eaf4ff;   /* light blue */
+  border: 2px solid #6fa8dc;   /* darker blue border */
+  outline: none;
+}
+
+
+
