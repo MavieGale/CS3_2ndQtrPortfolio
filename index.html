@@ -1,125 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="2Q Portfolio">
-        <meta name="keywords" content="2Q, 3Q, 4Q, Portfolio, Projects, Web Development">
-        <meta name="author" content="Mavie Gale Cruz">
-        <title>2nd Qtr Portfolio</title>
-        <link rel="stylesheet" href="stylesheet.css">
-        <link rel="icon" href="./asset/Venti.jpg" sizes="100x100" type="image/jpg">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <script src="script.js" defer></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="2Q Portfolio" />
+    <meta name="keywords" content="2Q, Portfolio, Projects, Web Development" />
+    <meta name="author" content="Mavie Gale Cruz" />
 
-        <style>
-            body {
-                background-image: linear-gradient(to bottom,  #afecdd, #80e9cf);
-                min-height: 100vh;
-                margin: 0;
-                font-family: 'Montserrat', sans-serif;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: flex-start;
-                padding-top: 80px; 
-                opacity: 0;
-                animation: fadeIn 1.0s ease-in forwards;
-            }
+    <title>2Q Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href=".\asset\pshslogo.png" sizes="32x32" type="image/png" />
+    <script src="script.js" defer></script>
+    
+</head>
+<body>
+    <header>
+        <div>
+            <img src="./asset/pshslogo.png" 
+                  alt="pshs logo" title="The Official Logo" width="50px" height="50px" />
+            <h1>
+                Portfolio of my work for the school year 2025-2026    
+            </h1>
+        </div>
+        <!-- Load font awesome icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-
-            @keyframes fadeIn {
-                from { opacity: 0; }
-                to { opacity: 1; }
-            }
-
-            h1 {
-                font-weight: 700;
-                margin-bottom: 30px;
-                text-align: center;
-            }
-
-            .card {
-                background-color: white;
-                border-radius: 20px;
-                box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
-                display: flex;
-                align-items: center;
-                padding: 25px 40px;
-                width: 420px;
-                gap: 25px;
-            }
-
-            .card img {
-                width: 120px;
-                height: 120px;
-                border-radius: 50%;
-                object-fit: cover;
-            }
-
-            .info p {
-                margin: 5px 0;
-                font-size: 16px;
-            }
-
-            .info b {
-                font-weight: 600;
-            }
-
-            nav a {
-                display: inline-block;
-                margin-top: 25px;
-                background-color: #fff;
-                color: #333;
-                padding: 10px 20px;
-                border-radius: 10px;
-                text-decoration: none;
-                font-weight: 600;
-                transition: all 0.3s ease;
-            }
-
-            nav a:hover {
-                background-color: #c3d3ff;
-                transform: scale(1.05);
-            }
-
-            footer {
-                text-align: center;
-                padding: 10px 0;
-                font-size: 14px;
-                color: #020720;
-                background: transparent; 
-                width: 100%;
-                margin-top: auto;
-                opacity: 0.8;
-            }
-        </style>
-    </head>
-
-    <body>
-        <header>
-            <center>
-                <h1>Haiyo! Welcome to my 2nd to 4th Qtr Portfolio!</h1>
-
-                <div class="card">
-                    <img src="./asset/barbatos.jpg" alt="Avatar">
-                    <div class="info">
-                        <p><b>Name:</b> Mavie Gale G. Cruz</p>
-                        <p><b>Section:</b> Beryllium</p>
-                        <p><b>CN:</b> Be09</p>
-                    </div>
+        <!-- The navigation menu -->
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <div class="subnav">
+                <button class="subnavbtn">2nd Qtr <i class="fa fa-caret-down"></i></button>
+                <div class="subnav-content">
+                    <!-- the graded exercises and projects -->
+                    <a href="./public/q2/2Q1GSBerylliumCruz.html"> 1st and 2nd Graded </a>
+                    <a href="./public/q2/sample.html"> Third Graded </a>
+                    <a href="./public/q2/Q21NGBerylliumCruz.html"> Non-Graded</a>
+                   </div>
+            </div>
+            <div class="subnav">
+                <button class="subnavbtn">Third <i class="fa fa-caret-down"></i></button>
+                <div class="subnav-content">
+                     <!-- VPL exercises for arrays/objects answers in onecompiler -->
+                    <a href="https://onecompiler.com/nodejs/44a9peurv" target="_blank"> VPL NG 1 </a>
+                    <a href="https://onecompiler.com/nodejs/44a9q2bt8" target="_blank"> VPL NG 2 </a>
+                    <a href="https://onecompiler.com/nodejs/44a9s6jm9" target="_blank"> SciHigh NG 3 </a>
+                    <!-- the graded exercises and projects -->
+                    <a href="" target="_blank"> 1st Graded </a>
+                    <a href=""> 2nd Graded </a>
                 </div>
-            </center>
-        </header>
-
-        <nav>
-            <a href="./public/2QHomePage.html">2nd Qtr</a>
-            <a href="./public/3QHomePage.html">3rd Qtr</a>
-            <a href="./public/4QHomePage.html">4th Qtr</a>
-
-        <footer>
-            <p>	&#169; 2025 Mavie Gale Cruz | Philippine Science High School</p>
-        </footer>
-    </body>
+            </div>
+            <a href="#">Fourth</a>
+         </nav>
+    </header>
+    <section>
+        <article>
+            <p>Haiyo! Welcome to my 2nd, 3rd, and 4th Qtr Portfolio!</p>
+        </article>
+    </section>
+    <footer>
+        <p>Copyright <span>&copy; Mavie Gale Cruz </span></p>
+    </footer>
+</body>
