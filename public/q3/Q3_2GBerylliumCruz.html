@@ -15,6 +15,7 @@
     <link rel="icon" href="../../asset/pshslogo.png" sizes="32x32" type="image/png">
     <script src="script.js" defer></script>
   </head>
+</head>
   <body>
     <header>
     <nav class="navbar">
@@ -23,22 +24,22 @@
     </header>
     <section>
       <h1 class="title">Sign-up Page</h1>
-    <form id="dForm" action="registered.html" method="get"
+    <form id="dForm" method="get"
       onsubmit="return confirmSubmit()"
       onreset="return confirmReset()">
         <fieldset>
             <legend>Your Credentials</legend><br/>
             <label> StudentID: 
-                <input type="number" name="sId" id="sId" required />
+                <input onfocus="changeColor(this)" onblur="resetColor(this)" type="number" name="sId" id="sId" required />
             </label><br/><br/>
             <label> Fullname :
-                <input type="text" name="fname" id="fname" required />
+                <input onfocus="changeColor(this)" onblur="resetColor(this)" type="text" name="fname" id="fname" required />
             </label><br/><br/>
             <label> Birthday :
-                <input type="date" name="dob" id="dob" />
+                <input onfocus="changeColor(this)" onblur="resetColor(this)" type="date" name="dob" id="dob" required />
             </label><br/><br/>
             <label> Email Adress :
-                <input type="email" name="emad" id="emad" />
+                <input onfocus="changeColor(this)" onblur="resetColor(this)" type="email" name="emad" id="emad" required />
             </label><br/><br/>
             <label for="gradelvl">Grade Level :</label>
             <select id="gradelvl" name="gradelvl" required>
@@ -51,8 +52,8 @@
             </select>
             <br><br>
             <label> Intern / Extern :
-                <input type="radio" name="i/e" value="extern" /> Extern
-                <input type="radio" name="i/e" value="intern" /> Intern
+                <input onfocus="changeColor(this)" onblur="resetColor(this)" type="radio" name="i/e" value="extern" required/> Extern
+                <input onfocus="changeColor(this)" onblur="resetColor(this)" type="radio" name="i/e" value="intern" required/> Intern
             </label><br/><br/>
             <label for="club">Preferred Organization / Club :</label>
             <select id="club" name="club" required>
@@ -65,12 +66,12 @@
             </select>
             <br><br>
             <label> Why do you want to join : 
-                <textarea name="join" id="join">
+                <textarea name="join" id="join" required>
                 </textarea>
             </label><br/><br/>
 
             <label> 
-                <input type="checkbox" name="dp" id="dp" value="true" /> 
+                <input type="checkbox" name="dp" id="dp" value="true" required /> 
                 Agree to Data Privacy Policy
             </label><br/><br/>
           
@@ -79,7 +80,6 @@
           <legend>Action Buttons</legend>
           <button type="submit"> Accept </button>
           <input type="reset" value=" Clear " />
-          <p onclick="alert('')">Confirm to Proceed.</p>
         </fieldset> 
       </form>
     </section>

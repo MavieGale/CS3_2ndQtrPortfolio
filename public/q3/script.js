@@ -39,3 +39,14 @@ form.addEventListener("reset", function (e) {
     e.preventDefault();
   }
 });
+
+
+function focusColor(ele) {
+  console.log(ele);
+  ele.style.backgroundColor = "light blue";
+} 
+
+function blurColor(ele) {
+  console.log(ele);
+ ele.style.backgroundColor = "white";
+} 
