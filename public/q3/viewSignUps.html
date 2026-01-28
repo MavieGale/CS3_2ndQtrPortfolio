@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Q3 2nd Graded Exercise">
+    <meta name="keywords" content="HTML Forms">
+    <meta name="author" content="Mavie Gale Cruz">
+    <title>Sample Form</title>
+    <!-- updated external css link to show how to share it between repository -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./2gstyle.css" />
+    <link rel="icon" href="../../asset/pshslogo.png" sizes="32x32" type="image/png">
+    <script src="script.js" defer></script>
+  </head>
+  <style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        font-family: 'Karla', sans-serif;
+        margin-top: 20px;
+    }
+
+    /* Header row */
+    table th {
+        background-color: #a5ebf8; 
+        color: #0d1740;
+        padding: 8px;
+        text-align: left;
+        border: 1px solid #333647;
+    }
+
+    /* Table cells */
+    table td {
+        padding: 8px;
+        border: 1px solid #333647;
+        color:#333647;
+;
+    }
+  </style>
+  <body>
+     <header>
+        <div>
+            <h1>
+                Show List of Accounts    
+            </h1>
+        </div>
+        <nav class="navbar">
+            <a href="../../index.html"> Home </a>
+            <a href="Q3_2GBerylliumCruz.html"> Create Account </a>
+        </nav>
+    </header>
+    <section>
+    <h1 class="title">Account Saved In Your Computer</h1>
+
+    <select id="clubFilter">
+    <option value="ALL">ALL</option>
+    <option value="Likha">Likha</option>
+    <option value="AstroSoc">AstroSoc</option>
+    <option value="Bake Club">Bake Club</option>
+    <option value="Munhwa">Munhwa</option>
+    <option value="XYZ">XYZ</option>
+    <option value="Sightlines">Sightlines</option>
+    </select>
+
+    <p id="total"></p>
+
+    <table id="results"></table>
+
+    </section>
+    
+    <script>
+    const table = document.getElementById("results");
+    const filter = document.getElementById("clubFilter");
+    const total = document.getElementById("total");
+
+    // get saved students
+    let students = JSON.parse(localStorage.getItem("accounts")) || [];
+
+    // function to display table
+    function show(list) {
+
+      if (list.length === 0) {
+        table.innerHTML = "<tr><td>No signups found.</td></tr>";
+        total.textContent = "Total Sign-ups: 0";
+        return;
+      }
+
+      let html = `
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Grade</th>
+        <th>Club</th>
+      </tr>`;
+
+      list.forEach(s => {
+        html += `
+        <tr>
+          <td>${s.sId}</td>
+          <td>${s.fname}</td>
+          <td>${s.emad}</td>
+          <td>${s.gradelvl}</td>
+          <td>${s.club}</td>
+        </tr>`;
+      });
+
+      table.innerHTML = html;
+      total.textContent = "Total Sign-ups: " + list.length;
+    }
+
+    // show ALL on load
+    show(students);
+
+    // filter when dropdown changes
+    filter.addEventListener("change", () => {
+
+      if (filter.value === "ALL") {
+        show(students);
+      } else {
+        let filtered = students.filter(s => s.club === filter.value);
+        show(filtered);
+      }
+
+    });
+    </script>
+
+  </body>
+</html>

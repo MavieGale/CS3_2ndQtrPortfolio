@@ -1,41 +1,38 @@
-// read from the localStorage saved as a string - to see if there are anything saved on the users computer
-let acctString = localStorage.getItem("accounts");
-if (!acctString) {
-  accountList = {};
-} else {
-  accountList = JSON.parse(acctString);
-}
+// Get the form element
+const form = document.getElementById("dForm");
 
-const form = document.getElementById("dForm"); // get the HTML form
-
-// event handler on the submit button
+// When user clicks Accept
 form.addEventListener("submit", function (e) {
-  e.preventDefault(); // prevent page reload
+  e.preventDefault(); // stop page reload
 
-  if (confirm("Are you sure you want to proceed?")) {
-    const data = new FormData(form);
-    const obj = Object.fromEntries(data.entries());
+  // Confirm submission
+  if (!confirm("Are you sure you want to submit?")) return;
 
-    // USE Student ID as the key instead of uname
-    accountList[obj.sId] = {};
+  // Get existing signups from localStorage
+  let saved = localStorage.getItem("accounts");
 
-    for (let key in obj) {
-      if (key !== "sId") {
-        accountList[obj.sId][key] = obj[key];
-      }
-    }
+  // If nothing saved yet, create empty array
+  let accounts = saved ? JSON.parse(saved) : [];
 
-    console.log(accountList);
-    acctString = JSON.stringify(accountList);
-    localStorage.setItem("accounts", acctString);
+  // Collect form data
+  const data = new FormData(form);
+  const student = Object.fromEntries(data.entries());
 
-    form.submit();
-  }
+  // Add new student to array
+  accounts.push(student);
+
+  // Save back to localStorage
+  localStorage.setItem("accounts", JSON.stringify(accounts));
+
+  alert("Signup saved successfully!");
+
+  // Clear form after saving
+  form.reset();
 });
 
-// event handler for the reset button
+// Ask confirmation before clearing form
 form.addEventListener("reset", function (e) {
-  if (!confirm("Are you sure you want to clear the form?")) {
+  if (!confirm("Clear the form?")) {
     e.preventDefault();
   }
 });
