@@ -6,7 +6,6 @@
     <meta name="description" content="Q3 2nd Graded Exercise">
     <meta name="keywords" content="HTML Forms">
     <meta name="author" content="Mavie Gale Cruz">
-    <title>Sample Form</title>
     <!-- updated external css link to show how to share it between repository -->
    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -68,65 +67,70 @@
     <p id="total"></p>
 
     <table id="results"></table>
-
     </section>
     
     <script>
-    const table = document.getElementById("results");
-    const filter = document.getElementById("clubFilter");
-    const total = document.getElementById("total");
+      const table = document.getElementById("results");
+      const filter = document.getElementById("clubFilter");
+      const total = document.getElementById("total");
 
-    // get saved students
-    let students = JSON.parse(localStorage.getItem("accounts")) || [];
+      // Read saved signups
+      let students = JSON.parse(localStorage.getItem("accounts")) || [];
 
-    // function to display table
-    function show(list) {
-
-      if (list.length === 0) {
-        table.innerHTML = "<tr><td>No signups found.</td></tr>";
+      // convert object to array if needed (from old version)
+      if (!Array.isArray(students)) {
+        students = Object.values(students);
+      }
+      // Show message if nothing saved at all
+      if (students.length === 0) {
+        table.innerHTML = "<tr><td>No sign-ups saved yet.</td></tr>";
         total.textContent = "Total Sign-ups: 0";
-        return;
       }
 
-      let html = `
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Grade</th>
-        <th>Club</th>
-      </tr>`;
+      // Function to display table
+      function show(list) {
 
-      list.forEach(s => {
-        html += `
+        if (list.length === 0) {
+          table.innerHTML = "<tr><td>No students found for this club.</td></tr>";
+          total.textContent = "Total Sign-ups: 0";
+          return;
+        }
+
+        let html = `
         <tr>
-          <td>${s.sId}</td>
-          <td>${s.fname}</td>
-          <td>${s.emad}</td>
-          <td>${s.gradelvl}</td>
-          <td>${s.club}</td>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Grade</th>
+          <th>Club</th>
         </tr>`;
+
+        list.forEach(s => {
+          html += `
+          <tr>
+            <td>${s.sId}</td>
+            <td>${s.fname}</td>
+            <td>${s.emad}</td>
+            <td>${s.gradelvl}</td>
+            <td>${s.club}</td>
+          </tr>`;
+        });
+        table.innerHTML = html;
+        total.textContent = "Total Sign-ups: " + list.length;
+      }
+      show(students);
+
+      // Filter when dropdown changes
+      filter.addEventListener("change", () => {
+        if (filter.value === "ALL") {
+          show(students);
+        } 
+        else {
+          let filtered = students.filter(s => s.club === filter.value);
+          show(filtered);
+        }
       });
 
-      table.innerHTML = html;
-      total.textContent = "Total Sign-ups: " + list.length;
-    }
-
-    // show ALL on load
-    show(students);
-
-    // filter when dropdown changes
-    filter.addEventListener("change", () => {
-
-      if (filter.value === "ALL") {
-        show(students);
-      } else {
-        let filtered = students.filter(s => s.club === filter.value);
-        show(filtered);
-      }
-
-    });
-    </script>
-
+  </script>
   </body>
 </html>
